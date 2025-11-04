@@ -1,0 +1,727 @@
+/* VARIABLES DE COLOR */
+:root {
+    --color-primary: #1e8449; /* Verde Esmeralda (Destacado) */
+    --color-secondary: #27ae60; /* Verde Brillante (Hover/Acento) */
+    --color-text-dark: #1c2833; /* Negro/Gris Oscuro */
+    --color-bg-light: #f8fcf9; /* Fondo Verde Claro Sutil */
+    --color-white: #ffffff;
+    --font-family: 'Inter', 'Avenir', sans-serif;
+}
+
+/* RESET Y ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-dark);
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/* BOTONES */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.header {
+    background-color: var(--color-white);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+
+.nav-logo span {
+    color: var(--color-primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: var(--color-text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.nav-cta {
+    padding: 8px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.nav-cta:hover {
+    background-color: var(--color-secondary);
+}
+
+.nav-cta-mobile { display: none; }
+.hamburger { display: none; }
+
+/* SECCIÓN HERO */
+.hero {
+    background: linear-gradient(180deg, var(--color-white) 0%, var(--color-bg-light) 100%); /* Degradado Blanco a Verde Claro */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 3.5em;
+}
+
+.logo-plus {
+    color: var(--color-primary); /* Aplica el color verde principal */
+}
+
+.hero p {
+    font-size: 1.25em;
+    margin-bottom: 30px;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    background-color: transparent; 
+    min-height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(30, 132, 73, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.product-hero-image {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* ESTILOS DE SECCIÓN GENERALES */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.background-verde-claro {
+    background-color: var(--color-bg-light);
+}
+
+/* SECCIÓN DE CARACTERÍSTICAS */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(30, 132, 73, 0.1);
+}
+
+.icon-placeholder {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* SECCIÓN DE TESTIMONIOS (CARRUSEL) */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-track-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    min-width: 100%;
+    padding: 40px;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.testimonial-card .author {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 1em;
+}
+
+.carousel-btn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(30, 132, 73, 0.2);
+}
+
+#prevBtn { margin-right: 10px; }
+#nextBtn { margin-left: 10px; }
+
+/* SECCIÓN DE PRECIOS */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.plan-card {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.plan-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 3em;
+    font-weight: 800;
+    margin: 10px 0 20px;
+    color: var(--color-text-dark);
+}
+
+.price span {
+    font-size: 0.4em;
+    font-weight: 500;
+    color: #555;
+}
+
+.plan-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.plan-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
+}
+
+.highlighted-plan {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); /* Degradado Verde para destacar */
+    color: var(--color-white);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(30, 132, 73, 0.3);
+}
+
+.highlighted-plan h3, .highlighted-plan .price {
+    color: var(--color-white);
+}
+
+.highlighted-plan li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+}
+
+.highlighted-plan .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.highlighted-plan .btn-primary:hover {
+    background-color: #eee;
+}
+
+/* SECCIÓN FAQ (ACORDEÓN) */
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-title {
+    width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    padding: 18px 25px;
+    text-align: left;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-title:hover {
+    background-color: var(--color-bg-light);
+}
+
+.accordion-title::after {
+    content: '+';
+    font-size: 1.5em;
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+
+.accordion-title.active::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    background-color: #fff;
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content p {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    color: #555;
+}
+
+/* SECCIÓN DE CONTACTO */
+.contact {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    text-align: center;
+}
+
+.contact .section-title, .contact p {
+    color: var(--color-white);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--color-text-dark);
+    color: #ddd;
+    padding: 40px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: var(--color-primary);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 0.9em;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-secondary);
+}
+
+.social-links a {
+    color: var(--color-white);
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+
+/* ANIMACIONES (Animate on Scroll - AOS Simple) */
+.fade-up, .fade-in {
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}
+
+.fade-up {
+    transform: translateY(20px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN (Mobile First) */
+@media (max-width: 1000px) {
+    .nav-menu {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    
+    /* Navbar móvil */
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--color-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 20px 0;
+    }
+
+    .nav-cta { display: none; }
+    .nav-cta-mobile { display: block; }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--color-text-dark);
+    }
+
+    /* Hero */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text-container, .hero-image-placeholder {
+        max-width: 100%;
+    }
+
+    .hero-image-placeholder {
+        min-height: 300px;
+        margin-top: 30px;
+    }
+
+    /* Precios */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlighted-plan {
+        transform: scale(1.02);
+    }
+}
+
+/* Mostrar el botón de adquirir en móviles */
+.nav-cta-mobile {
+    display: none !important; /* Por defecto se oculta */
+}
+
+/* Ocultar la hamburguesa en escritorio */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Estilos de las barras */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-primario); /* Asumiendo que defines una variable para tu color principal */
+}
+
+/* Media Query para dispositivos móviles (menos de 768px de ancho) */
+@media screen and (max-width: 768px) {
+    /* 1. Ocultar el CTA de escritorio y mostrar el de móvil */
+    .nav-cta {
+        display: none;
+    }
+    .nav-cta-mobile {
+        display: list-item !important;
+    }
+    
+    /* 2. Mostrar el icono de hamburguesa */
+    .hamburger {
+        display: block;
+    }
+
+    /* 3. Colapsar el menú de enlaces */
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Ocultar el menú fuera de la pantalla */
+        top: 60px; /* Colocar debajo del header/navbar */
+        flex-direction: column;
+        background-color: #fff; /* Fondo blanco para el menú */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 100;
+        height: 100vh; /* Opcional: para que cubra toda la altura */
+        padding-top: 20px;
+    }
+
+    /* 4. Mostrar el menú cuando tiene la clase 'active' */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* 5. Estilos para los elementos del menú */
+    .nav-item {
+        margin: 20px 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 10px 0;
+        display: block;
+    }
+    
+    /* 6. Animación del icono de hamburguesa (para convertirse en una 'X') */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Asegurar que el logo quede en el lugar correcto */
+    .navbar {
+        justify-content: space-between;
+        padding: 1rem 5%;
+    }
+}
